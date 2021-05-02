@@ -31,10 +31,15 @@ public class MusicForWeatherController {
         model.addAttribute("location",  new Location());
         return "indexPage";
     }
-//
-//    @RequestMapping("/getMusic")
-//    public String getMusic(){
-//        System.out.println("Sunny");
-//        return "Sunny";
-//    }
+
+    @RequestMapping("/getMusic")
+    public String getMusic(){
+        System.out.println("Sunny");
+        return "Sunny";
+    }
+    @RequestMapping("/test")
+    public String getTest(){
+        System.out.println("test.html");
+        return "test";
+    }
 }
