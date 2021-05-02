@@ -8,7 +8,7 @@ import javax.validation.constraints.Pattern;
 
 @Data
 public class Location {
-    @Pattern(regexp="^[A-Z a-z \\\\s\\\\-]*$",message = "Invalid Input")
+    @Pattern(regexp="^[A-Z a-z \\\\s\\\\-]*$",message = "Invalid City Value. Only characters allowed")
     private String name;
     @Pattern(regexp = "^([-+]?([1-8]?\\d(\\.\\d+)?|90(\\.0+)?))|$", message ="Invalid lat value")
     private String latitude;
