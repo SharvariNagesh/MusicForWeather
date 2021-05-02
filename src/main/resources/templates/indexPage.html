@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+   <title>Music for the weather</title>
+</head>
+<body>
+<div align="center">
+  <form action="#" th:action="@{/getMusicForWeather}" method="post" th:object="${location}">
+    <div>
+      <p class="alert alert-danger" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"/>
+      <p class="alert alert-danger" th:if="${#fields.hasErrors('latitude')}" th:errors="*{latitude}"/>
+      <p class="alert alert-danger" th:if="${#fields.hasErrors('longitude')}" th:errors="*{longitude}"/>
+<!--      <ul th:if="${#fields.hasErrors('*')}">-->
+<!--        <li th:each="error : ${#fields.errors('*')}" th:text="${error}">error</li>-->
+<!--      </ul>-->
+<!--      <ul th:if="${#fields.hasErrors('global')}">-->
+<!--        <li th:each="error : ${#fields.errors('global')}" th:text="${error}">error</li>-->
+<!--      </ul>-->
+    </div>
+    <h1>Enter the City:</h1>
+    <label>City name:</label>
+    <input type="text" id="name" name="name" />
+    <label>Latitude:</label>
+    <input type="text" th:field="*{latitude}" placeholder="double" name="latitude"/>
+    <label>Longitude:</label>
+    <input type="text" th:field="*{longitude}" placeholder="double" name="longitude"/>
+    <button type="submit">Get Music</button>
+  </form>
+</div>
+</body>
+</html>

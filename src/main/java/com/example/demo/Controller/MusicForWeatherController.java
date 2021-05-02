@@ -5,41 +5,36 @@ import com.example.demo.Model.Weather;
 import com.example.demo.Service.GetMusicForCity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.ui.Model;
+import javax.validation.Valid;
 
 @Controller
-//@RequestMapping("/")
 public class MusicForWeatherController {
-
-//    @Autowired
-//    WeatherMusicRepository weatherRepo;
-
     @Autowired
     GetMusicForCity getMusicForCity;
 
     @PostMapping("/getMusicForWeather")
-    public String submitForm(@ModelAttribute("location") Location location) {
-
+    public String submitForm( @ModelAttribute("location") @Valid Location location,  BindingResult result) {
+        if(result.hasErrors()) {
+            return "indexPage";
+        }
         Weather wm = getMusicForCity.getWeatherByLocation(location);
-//        System.out.println(wm.getId());
-//        System.out.println(wm.getMusic());
         System.out.println(wm.toString());
-
-        System.out.println("Location:" + location.getName());
+        System.out.println("Location:" + wm.getName());
 
         return "music";
     }
     @GetMapping("/")
     public String index(Model model) {
-        System.out.println("Inside Index method");
         model.addAttribute("location",  new Location());
-        return "indexWeather";
+        return "indexPage";
     }
-
-    @RequestMapping("/getMusic")
-    public String getMusic(){
-        System.out.println("Sunny");
-        return "Sunny";
-    }
+//
+//    @RequestMapping("/getMusic")
+//    public String getMusic(){
+//        System.out.println("Sunny");
+//        return "Sunny";
+//    }
 }
