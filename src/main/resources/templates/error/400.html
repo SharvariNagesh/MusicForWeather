@@ -1,10 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
 <body>
-<h2>Error: Problem in the City or Lat/Long Value! </h2>
+<h2>Error: Problem in the City or Lat/Long Value!
+    <span th:if="${errorMessage}"  th:text="${errorMessage}">Error</span>
+</h2>
 </body>
 </html>

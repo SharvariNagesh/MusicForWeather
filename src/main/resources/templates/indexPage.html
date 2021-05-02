@@ -14,21 +14,16 @@
       <p class="alert alert-danger" th:if="${#fields.hasErrors('name')}" th:errors="*{name}"/>
       <p class="alert alert-danger" th:if="${#fields.hasErrors('latitude')}" th:errors="*{latitude}"/>
       <p class="alert alert-danger" th:if="${#fields.hasErrors('longitude')}" th:errors="*{longitude}"/>
-<!--      <ul th:if="${#fields.hasErrors('*')}">-->
-<!--        <li th:each="error : ${#fields.errors('*')}" th:text="${error}">error</li>-->
-<!--      </ul>-->
-<!--      <ul th:if="${#fields.hasErrors('global')}">-->
-<!--        <li th:each="error : ${#fields.errors('global')}" th:text="${error}">error</li>-->
-<!--      </ul>-->
     </div>
     <h1>Enter the City:</h1>
     <label>City name:</label>
     <input type="text" id="name" name="name" />
     <label>Latitude:</label>
-    <input type="text" th:field="*{latitude}" placeholder="double" name="latitude"/>
+    <input type="text" th:field="*{latitude}" placeholder="Latitude" name="latitude"/>
     <label>Longitude:</label>
-    <input type="text" th:field="*{longitude}" placeholder="double" name="longitude"/>
-    <button type="submit">Get Music</button>
+    <input type="text" th:field="*{longitude}" placeholder="Longitude" name="longitude"/>
+    </div>
+      <button type="submit" class="btn btn-primary mb-2">Get Music</button>
   </form>
 </div>
 </body>
