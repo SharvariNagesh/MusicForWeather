@@ -2,6 +2,7 @@ package com.example.demo.Service;
 
 import com.example.demo.Constants.TempMapsEnum;
 import com.example.demo.Model.Location;
+import com.example.demo.Model.Music;
 import com.example.demo.Model.Weather;
 import com.example.demo.Util.Utilities;
 import com.example.demo.custom.Exception.WrongInputException;
@@ -16,18 +17,21 @@ import reactor.core.publisher.Mono;
 
 @Service
 public class GetMusicForLocation {
-    //@Autowired
-//    private WeatherMusicRepository weatherRepo ;
-
-
     @Autowired
     private SpotifyService spotifyService;
 
     @Autowired
     private GetWeatherService getWeatherService;
 
-    public void getMusicForTheLocation(Location location){
+    public Music getMusicForTheLocation(Location location){
+        Location location1 = new Location();
         Weather weather = getWeatherService.getWeatherByLocation(location);
-        spotifyService.get_album(weather.getMain().getTemp());
+        Music music = spotifyService.get_album(weather.getMain().getTemp());
+        location1.setName(weather.getName());
+        location1.setLongitude(weather.getCoord().getLon());
+        location1.setLatitude(weather.getCoord().getLat());
+        music.setLocation(location1);
+        music.setTemperature(weather.getMain());
+        return music;
     }
 }

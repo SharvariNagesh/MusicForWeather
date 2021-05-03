@@ -1,6 +1,7 @@
 package com.example.demo.Controller;
 
 import com.example.demo.Model.Location;
+import com.example.demo.Model.Music;
 import com.example.demo.Service.GetMusicForLocation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,17 +16,16 @@ public class MusicForWeatherController {
     GetMusicForLocation getMusicForLocation;
 
     @PostMapping("/getMusicForWeather")
-    public String submitForm( @ModelAttribute("location") @Valid Location location,  BindingResult result) {
+    public String submitForm( Model model, @ModelAttribute("location") @Valid Location location,  BindingResult result) {
         if(result.hasErrors()) {
             return "indexPage";
         }
-        //Weather wm =
-         getMusicForLocation.getMusicForTheLocation(location);
-//        System.out.println(wm.toString());
-//        System.out.println("Location:" + wm.getName());
-
+        Music music =  getMusicForLocation.getMusicForTheLocation(location);
+        model.addAttribute("music", music);
+        System.out.println("Music model: " + music.toString());
         return "music";
     }
+
     @GetMapping("/")
     public String index(Model model) {
         model.addAttribute("location",  new Location());

@@ -1,22 +1,22 @@
 package com.example.demo.Model;
 
 public class Coordinates {
-    private double lon;
-    private double lat;
+    private String lon;
+    private String lat;
 
-    public double getLon() {
+    public String getLon() {
         return lon;
     }
 
-    public void setLon(double lon) {
+    public void setLon(String lon) {
         this.lon = lon;
     }
 
-    public double getLat() {
+    public String getLat() {
         return lat;
     }
 
-    public void setLat(double lat) {
+    public void setLat(String lat) {
         this.lat = lat;
     }
 

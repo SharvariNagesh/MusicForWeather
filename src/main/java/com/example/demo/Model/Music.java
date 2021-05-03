@@ -1,13 +1,16 @@
 package com.example.demo.Model;
 
-public class Music {
-    private String href;
-    private String musicType;
-    private String name;
-    private String url;
+import com.wrapper.spotify.enums.ModelObjectType;
 
-    public Music() {
-    }
+import java.util.ArrayList;
+import java.util.List;
+
+public class Music {
+    private Location location;
+    private Temperature temperature;
+    private String href;
+    private String name;
+    private List<Track> trackList = new ArrayList<Track>();
 
     public String getName() {
         return name;
@@ -17,11 +20,47 @@ public class Music {
         this.name = name;
     }
 
-    public String getUrl() {
-        return url;
+    public String getHref() {
+        return href;
     }
 
-    public void setUrl(String url) {
-        this.url = url;
+    public void setHref(String href) {
+        this.href = href;
     }
+
+    public List<Track> getTrackList() {
+        return trackList;
+    }
+
+    public void setTrackList(List<Track> trackList) {
+        this.trackList = trackList;
+    }
+
+    public Location getLocation() {
+        return location;
+    }
+
+    public void setLocation(Location location) {
+        this.location = location;
+    }
+
+    public Temperature getTemperature() {
+        return temperature;
+    }
+
+    public void setTemperature(Temperature temperature) {
+        this.temperature = temperature;
+    }
+
+    @Override
+    public String toString() {
+        return "Music{" +
+                "location=" + location +
+                ", temperature=" + temperature +
+                ", href='" + href + '\'' +
+                ", name='" + name + '\'' +
+                ", trackList=" + trackList +
+                '}';
+    }
+
 }
