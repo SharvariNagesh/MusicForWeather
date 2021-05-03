@@ -1,6 +1,7 @@
 package com.example.demo.Advice;
 
 import com.example.demo.custom.Exception.WrongInputException;
+import com.wrapper.spotify.exceptions.detailed.InternalServerErrorException;
 import javassist.NotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,12 +18,16 @@ public class DemoControllerAdvice {
     }
 
     @ExceptionHandler(NotFoundException.class)
-    public ResponseEntity<String> handleNotFound(NotFoundException notFoundException){
+    public ResponseEntity<String> handleNotFound(NotFoundException notFoundException) {
+        System.out.println("NotFoundException raised:" + notFoundException.getMessage());
         return new ResponseEntity<String>(notFoundException.getMessage(), HttpStatus.BAD_REQUEST);
     }
 
-//    @ExceptionHandler(Exception.class)
-//    public ResponseEntity<String> handleException(Exception exception){
-//        return new ResponseEntity<String>(exception.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
-//    }
+    @ExceptionHandler(InternalServerErrorException.class)
+    public ResponseEntity<String> handleInternalError(InternalServerErrorException internalServerErrorExceptionError){
+
+        return new ResponseEntity<String>(internalServerErrorExceptionError.getMessage(), HttpStatus.INTERNAL_SERVER_ERROR);
+    }
+
+
 }

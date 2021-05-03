@@ -1,8 +1,7 @@
 package com.example.demo.Controller;
 
 import com.example.demo.Model.Location;
-import com.example.demo.Model.Weather;
-import com.example.demo.Service.GetMusicForCity;
+import com.example.demo.Service.GetMusicForLocation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
@@ -13,16 +12,17 @@ import javax.validation.Valid;
 @Controller
 public class MusicForWeatherController {
     @Autowired
-    GetMusicForCity getMusicForCity;
+    GetMusicForLocation getMusicForLocation;
 
     @PostMapping("/getMusicForWeather")
     public String submitForm( @ModelAttribute("location") @Valid Location location,  BindingResult result) {
         if(result.hasErrors()) {
             return "indexPage";
         }
-        Weather wm = getMusicForCity.getWeatherByLocation(location);
-        System.out.println(wm.toString());
-        System.out.println("Location:" + wm.getName());
+        //Weather wm =
+         getMusicForLocation.getMusicForTheLocation(location);
+//        System.out.println(wm.toString());
+//        System.out.println("Location:" + wm.getName());
 
         return "music";
     }
