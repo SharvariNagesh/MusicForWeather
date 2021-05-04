@@ -24,6 +24,10 @@ import java.util.Arrays;
 import java.util.Iterator;
 import java.util.List;
 
+/**
+ * @author: Sharvari Nagesh
+ * Gets the weather information and fetches music playlist from spotify by calling spotifyAPIs.
+ */
 @Service
 public class SpotifyService {
 

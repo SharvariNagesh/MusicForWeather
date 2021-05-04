@@ -9,6 +9,10 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Mono;
+/**
+ * @author: Sharvari Nagesh
+ * Weather Service. This is responsible for calling openweather API and get the weather details.
+ */
 
 @Service
 public class GetWeatherService {

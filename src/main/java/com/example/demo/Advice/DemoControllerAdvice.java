@@ -1,4 +1,9 @@
 package com.example.demo.Advice;
+/**
+ * author : Sharvari Nagesh
+ * Description: Controller Advice class. This handles exceptions thrown.
+ *
+ */
 
 import com.example.demo.custom.Exception.WrongInputException;
 import com.wrapper.spotify.exceptions.detailed.InternalServerErrorException;

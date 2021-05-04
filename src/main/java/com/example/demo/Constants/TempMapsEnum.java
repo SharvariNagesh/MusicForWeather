@@ -3,6 +3,12 @@ package com.example.demo.Constants;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
 
+/**
+ * @author Sharvari Nagesh
+ * TempMapsEnum stores the temperature ranges for each section. and the playlist id to be played.
+ * This constant declaration has been done in one place, so that if any changes needs to be made in the temperature ranges,
+ * it is in one place.
+ */
 public enum TempMapsEnum {
 
         Hot(30,1000, "Hot","41YYBxyJB4CYKCtmMS3eHg","Party Track"),

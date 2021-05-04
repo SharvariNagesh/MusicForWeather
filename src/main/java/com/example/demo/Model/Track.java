@@ -1,5 +1,9 @@
 package com.example.demo.Model;
 
+/**
+ * @author: Sharvari Nagesh
+ * Model to store music tracks.
+ */
 public class Track {
     private String name;
     private String externalUrl;

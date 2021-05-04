@@ -1,5 +1,9 @@
 package com.example.demo.custom.Exception;
 
+/**
+ * @author: Sharvari Nagesh
+ * Authentication Exception class
+ */
 public class AuthenticationException extends RuntimeException{
     private String errorCode;
     private String errorMessage;

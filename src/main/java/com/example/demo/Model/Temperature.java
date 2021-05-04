@@ -1,5 +1,9 @@
 package com.example.demo.Model;
 
+/**
+ * @author: Sharvari Nagesh
+ * Model to store temperature data. This model is included inside Weather Model. The response of openWeather API is stored in these models.
+ */
 public class Temperature {
     private float temp;
     private float temp_min;

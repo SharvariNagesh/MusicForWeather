@@ -1,5 +1,8 @@
 package com.example.demo.custom.Exception;
-
+/**
+ * @author: Sharvari Nagesh
+ * EmptyInput Exception class
+ */
 public class EmptyInputException  extends RuntimeException{
     private String errorCode;
     private String errorMessage;

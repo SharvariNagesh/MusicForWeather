@@ -1,5 +1,8 @@
 package com.example.demo.Model;
-
+/**
+ * @author: Sharvari Nagesh
+ * Model to store latitude/longitude data. This is included in the Weather model.
+ */
 public class Coordinates {
     private String lon;
     private String lat;

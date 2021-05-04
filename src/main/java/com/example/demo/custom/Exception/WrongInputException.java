@@ -1,8 +1,11 @@
 package com.example.demo.custom.Exception;
 
 import org.springframework.stereotype.Component;
+/**
+ * @author: Sharvari Nagesh
+ * Wrong Input Exception class
+ */
 
-@Component
 public class WrongInputException extends RuntimeException{
     private String errorCode;
     private String errorMessage;

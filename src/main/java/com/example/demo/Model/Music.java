@@ -4,7 +4,10 @@ import com.wrapper.spotify.enums.ModelObjectType;
 
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * @author: Sharvari Nagesh
+ * Model to store Music play lists and Weather information. This object is sent back to the user in the final response.
+ */
 public class Music {
     private Location location;
     private Temperature temperature;

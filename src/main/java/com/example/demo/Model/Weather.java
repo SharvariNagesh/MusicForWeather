@@ -1,6 +1,9 @@
 package com.example.demo.Model;
 
-
+/**
+ * @author: Sharvari Nagesh
+ * Model to store Weather data returned by openweather API
+ */
 public class Weather {
     private Coordinates coord;
     private String name;

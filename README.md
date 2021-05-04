@@ -50,6 +50,7 @@ The application is developed using Java Spring Boot framework. The decision to u
 	- **Constants** : A Java enum,"TempMapEnums" is used to store the constants like different temperature ranges, Spotify playlist to be played for each weather type.
 	- **Util** : Util folder holds common utility functions used across the application
 	- **Custom Exception** handler : handles the messages and returns a ResponseString
+	- **Thymeleaf** : Thymeleaf is used in the UI development.
 	
 #### Pending work or TO-DOs:
 	- There are some API keys used in the application. For example, API key of openweathermap.org or Client Id/secret of Spotify which are hard coded. This needs to be made configurable and moved out in a secure place. Preferably as an environment variable.

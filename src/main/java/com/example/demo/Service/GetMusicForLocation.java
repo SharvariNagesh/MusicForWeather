@@ -14,7 +14,12 @@ import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
 import reactor.core.publisher.Mono;
-
+/**
+ * @author: Sharvari Nagesh
+ * Service class which talks to Weather service and gets the weather for a location.
+ * Ans passes the weather information to spotify service and gets music play list.
+ * aggregates the response and sends it back to controller
+ */
 @Service
 public class GetMusicForLocation {
     @Autowired

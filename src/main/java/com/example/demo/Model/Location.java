@@ -4,7 +4,10 @@ package com.example.demo.Model;
 import lombok.Data;
 
 import javax.validation.constraints.Pattern;
-
+/**
+ * @author: Sharvari Nagesh
+ * Model to store latitude/longitude data
+ */
 
 @Data
 public class Location {
