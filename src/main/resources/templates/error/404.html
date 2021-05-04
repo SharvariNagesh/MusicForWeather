@@ -5,7 +5,17 @@
     <title>404 Error page</title>
 </head>
 <body>
-<h2> Error: City or lat/long not found!</h2>
-<span th:if="${errorMessage}"  th:text="${errorMessage}">Error</span>
+<div class="container">
+    <a class="topright" href="/">Home</a>
+    <div class="d-flex justify-content-center h-100">
+        <div class="card_music">
+            <div class="card-header">
+                <h2> Error: City or lat/long not found!</h2>
+                <span th:if="${errorMessage}"  th:text="${errorMessage}">Error</span>
+            </div>
+        </div>
+    </div>
+</div>
+
 </body>
 </html>

@@ -1,10 +1,40 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"/>
+    <link th:href = "@{/css/style.css}" rel="stylesheet">
+    <title>Music for the weather</title>
 </head>
+
 <body>
-Inside Music.html
+<div class="container">
+    <a class="topright" href="/">Home</a>
+    <div class="d-flex justify-content-center h-100">
+        <div class="card_music">
+            <div class="card-header">
+                <div th:if="${musicForLocation == null}">
+                     <h5> No Music Available </h5>
+                </div>
+                <h4 align="center"> Music for <span th:text="${musicForLocation.location.name}" /> </h4><
+                <h5> Lat/Long:( <span th:text="${musicForLocation.location.latitude}" /> / <span th:text="${musicForLocation.location.longitude}" /> ) </h5>
+                <h5 align="center"> ( Current Temperature : <span th:text="${musicForLocation.temperature.temp}"/>&#8451;)</h5>
+            </div>
+            <div class="card-body table-responsive text-nowrap">
+<!--              <div class="table-responsive text-nowrap">-->
+                <table class="table table-striped">
+                    <th> From the library : <a th:href="@{${musicForLocation.href}}" /> <span th:text="${musicForLocation.name}" />! </th>
+                    <tr th:each="track:  ${musicForLocation.trackList}">
+                        <td> <a th:href="@{${track.externalUrl}}" />  <span th:text="${track.name}" /> </td>
+                    </tr>
+                </table>
+<!--              </div>-->
+            </div>
+    </div>
+</div>
+    <div th:insert="~{footer :: copy}"></div>
+</div>
 </body>
 </html>
+

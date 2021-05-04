@@ -7,8 +7,8 @@ public enum TempMapsEnum {
 
         Hot(30,1000, "Hot","41YYBxyJB4CYKCtmMS3eHg","Party Track"),
         COOL(15,30,"COOL", "62nvBTUMhBmBlF2s0JUht0", "Pop Track"),
-        CHILL(10,14,"CHILL","5qbbCEuAMUXuTIlOWrLepY", "Rock Track"),
-        FREEZ(-1000,13,"FREEZE","0vY8oLNjKUX4von9rxB3gb", "Classical Track");
+        CHILL(10,15,"CHILL","5qbbCEuAMUXuTIlOWrLepY", "Rock Track"),
+        FREEZ(-1000,10,"FREEZE","0vY8oLNjKUX4von9rxB3gb", "Classical Track");
 
         private final int low;
         private final int high;
