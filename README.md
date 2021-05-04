@@ -36,7 +36,7 @@ The application is tested on a mac OS.
 		
 			docker run -p8081:8080 message-server:latest
 - Can access the application at : http://localhost:8081/
-- 
+
 #### Design Details:
 The application is developed using Java Spring Boot framework. The decision to use Spring-Boot was taken because the framework is robust, flexible and provides various features just by using annotations. 
 
